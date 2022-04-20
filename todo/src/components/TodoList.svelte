@@ -1,7 +1,7 @@
 <script>
 	import TodoItem from "./TodoItem.svelte";
 
-	export let todos;
+	export let fetchTodos;
 	export let handleCheckTodo;
 	export let handleRemoveTodo;
 	export let editMode;
@@ -11,7 +11,7 @@
 
 <div class="main">
 	<ul>
-		{#each todos as todo, index (todo)}
+		{#each fetchTodos as todo, index (todo)}
 			<li>
 				<TodoItem {todo} {handleCheckTodo} {handleRemoveTodo} {editMode} {handleEditTodoItem} {handleChangeEditMode} />
 			</li>
