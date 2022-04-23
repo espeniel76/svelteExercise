@@ -33,9 +33,10 @@
 	let editMode = "";
 	let viewMode = Constant.ALL;
 
-	$: todoCount = fetchTodos.length;
 	$: fetchTodos = todos;
+	$: todoCount = fetchTodos.length;
 
+	// event listener 같은 거구나?
 	$: {
 		if (viewMode === Constant.ALL) fetchTodos = todos;
 		if (viewMode === Constant.ACTIVE) fetchTodos = todos.filter((todo) => todo.done === false);
